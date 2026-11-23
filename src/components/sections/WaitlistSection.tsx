@@ -1,7 +1,8 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
-import { ArrowRight, Check, Users, ShieldCheck, Sparkles, Copy, Store, Mail } from "lucide-react";
+import { ArrowRight, Check, Users, Sparkles, Copy, Store, Mail, Gift } from "lucide-react";
+import { LeaderboardAndRewards } from "@/components/waitlist/LeaderboardAndRewards";
 
 export function WaitlistSection() {
   const [email, setEmail] = useState("");
@@ -16,11 +17,11 @@ export function WaitlistSection() {
   const [errorMsg, setErrorMsg] = useState<string | null>(null);
   const [copied, setCopied] = useState(false);
 
-  // Live stats from API or initial momentum
+  // Live stats starting at 100
   const [stats, setStats] = useState({
-    currentSignups: 847,
+    currentSignups: 100,
     targetMilestone: 1000,
-    remainingSpots: 153,
+    remainingSpots: 900,
   });
 
   useEffect(() => {
@@ -88,7 +89,7 @@ export function WaitlistSection() {
       <div className="space-y-4 max-w-3xl mx-auto text-center">
         <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-[16px] bg-velvet-950 border border-sage-border text-sage-muted text-xs font-mono">
           <span className="w-2 h-2 rounded-full bg-pista-400 animate-pulse" />
-          <span>04 EARLY ACCESS &amp; AUTOMATION UNLOCK</span>
+          <span>EARLY ACCESS &amp; AUTOMATION UNLOCK</span>
         </div>
 
         <h2 className="text-3xl sm:text-5xl font-extrabold text-white tracking-tight leading-tight">
@@ -100,7 +101,7 @@ export function WaitlistSection() {
         </p>
       </div>
 
-      {/* Robinhood-Style Milestone Meter */}
+      {/* Robinhood-Style Milestone Meter Starting from 100 */}
       <div className="rounded-[28px] p-6 sm:p-8 bg-velvet-950 border border-sage-border shadow-2xl space-y-6">
         <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-4 border-b border-sage-border/80">
           <div className="flex items-center gap-3">
@@ -263,13 +264,16 @@ export function WaitlistSection() {
         )}
       </div>
 
+      {/* Embedded Leaderboard & Rewards Thresholds */}
+      <LeaderboardAndRewards />
+
       {/* Trust & Guarantee */}
       <div className="text-center pt-8 border-t border-sage-border/60 space-y-2">
         <p className="text-xs text-sage-muted font-mono">
           INDEXABLE © 2026 // SHOPIFY GENERATIVE ENGINE OPTIMIZATION ENGINE
         </p>
         <p className="text-[11px] text-sage-muted/70">
-          Public Auditor &amp; Fix Generator is 100% free and open-source. Automated injection rolling out after 1,000 verified signups.
+          Public Auditor &amp; Fix Generator is 100% free. Automated injection rolling out after 1,000 verified signups.
         </p>
       </div>
     </section>
