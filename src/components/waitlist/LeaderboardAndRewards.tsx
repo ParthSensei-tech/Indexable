@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
-import { Trophy, Gift, Sparkles, TrendingUp, Users, ArrowUpRight } from "lucide-react";
+import { Trophy, Gift, Sparkles, TrendingUp, Users, ArrowUpRight, DollarSign } from "lucide-react";
 
 interface LeaderboardItem {
   rank: number;
@@ -26,36 +26,40 @@ const REWARDS_TIERS = [
     points: 100,
     tier: "Bronze Tier",
     badge: "100 PTS",
-    title: "Batch 1 Early Access + Compatibility Report",
-    details: "Priority deployment in Cohort 1 when 1,000 signups are reached. Includes full theme compatibility diagnostic.",
+    title: "AI Citation Gap Audit ($199 Value)",
+    details: "Automated competitive intelligence report revealing which AI search queries cite your competitors instead of you, with revenue gap analysis.",
+    perkHighlight: "Free Diagnostic Unlock",
   },
   {
     points: 300,
     tier: "Silver Tier",
     badge: "300 PTS",
-    title: "Lifetime Free 1-Click Auto-Injection",
-    details: "Zero subscription fees for your primary Shopify store. Automated JSON-LD return policy & shipping schema sync forever.",
+    title: "1-Year Free Return Schema Sync ($588 Value)",
+    details: "12 months of automated return policy & shipping schema sync included. Unlocks ecosystem catalog integration and priority index pings.",
+    perkHighlight: "Saves $588 on Theme Sync",
   },
   {
     points: 500,
     tier: "Gold Tier",
     badge: "500 PTS",
-    title: "Multi-Store Sync + 24/7 AI Bot Monitor",
-    details: "Connect up to 3 Shopify stores. Real-time alerting if GPTBot or PerplexityBot access is blocked by theme changes.",
+    title: "Lifetime 50% Enterprise License ($1,200/yr Value)",
+    details: "Guaranteed 50% lifetime discount on multi-store catalog sync, real-time stock alert webhooks, and 24/7 AI crawler protection nodes.",
+    perkHighlight: "Locked-In Half Price Forever",
   },
   {
     points: 1000,
     tier: "VIP Diamond",
     badge: "1,000 PTS",
-    title: "Dedicated GEO Architect + Custom llms.txt",
-    details: "Hands-on consultation with an AI search engineer. Custom curated /llms.txt manifest and lifetime unlimited stores.",
+    title: "Quarterly 1-on-1 GEO Strategy Consultation ($2,500 Value)",
+    details: "Direct architectural consultation on custom /llms.txt manifest architecture, headless JSON-LD pipeline tuning, and custom crawler indexing.",
+    perkHighlight: "Direct Advisory Access",
   },
 ];
 
 export function LeaderboardAndRewards() {
   const [leaderboard, setLeaderboard] = useState<LeaderboardItem[]>(DEFAULT_LEADERBOARD);
 
-  // Simulate live dynamic leaderboard movement (points subtly fluctuating)
+  // Live dynamic leaderboard movement simulation
   useEffect(() => {
     const interval = setInterval(() => {
       setLeaderboard((prev) =>
@@ -79,29 +83,35 @@ export function LeaderboardAndRewards() {
     <div className="space-y-10">
       {/* Rewards Thresholds Grid */}
       <div className="space-y-4">
-        <div className="flex items-center gap-2">
-          <Gift className="w-4 h-4 text-pista-400" />
-          <h3 className="text-lg sm:text-xl font-bold text-white tracking-tight">
-            Waitlist Point Rewards &amp; Milestone Perks
-          </h3>
+        <div className="flex items-center justify-between flex-wrap gap-2">
+          <div className="flex items-center gap-2">
+            <Gift className="w-4 h-4 text-pista-400" />
+            <h3 className="text-lg sm:text-xl font-bold text-white tracking-tight">
+              Waitlist Point Rewards &amp; Merchant Perks
+            </h3>
+          </div>
+          <span className="text-xs font-mono text-pista-300 font-semibold bg-pista-400/10 border border-pista-400/25 px-2.5 py-1 rounded-[10px]">
+            Earn +50 pts per referred store founder
+          </span>
         </div>
+
         <p className="text-xs sm:text-sm text-sage-muted">
-          Earn points by signing up (+50 pts) and referring fellow Shopify founders (+50 pts per merchant). Rewards activate automatically upon milestone unlock.
+          Earn points by joining the waitlist (+50 pts) and inviting verified Shopify store founders (+50 pts per merchant). Rewards activate automatically upon milestone unlock.
         </p>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 items-stretch">
           {REWARDS_TIERS.map((tier) => (
             <div
               key={tier.tier}
-              className="p-5 rounded-[20px] bg-velvet-950 border border-sage-border flex flex-col justify-between space-y-3 shadow-lg"
+              className="p-5 rounded-[22px] bg-velvet-950 border border-sage-border flex flex-col justify-between space-y-3 shadow-lg hover:border-pista-400/50 transition-colors"
             >
               <div className="space-y-2">
                 <div className="flex items-center justify-between">
                   <span className="text-[10px] font-mono px-2 py-0.5 rounded-[8px] bg-pista-400/15 border border-pista-400/30 text-pista-300 font-bold">
                     {tier.badge}
                   </span>
-                  <span className="text-[11px] font-mono text-sage-muted">
-                    {tier.tier}
+                  <span className="text-[10px] font-mono text-amber-300 bg-amber-400/10 px-2 py-0.5 rounded-[8px] border border-amber-400/25">
+                    {tier.perkHighlight}
                   </span>
                 </div>
                 <h4 className="text-sm font-bold text-white tracking-tight">
@@ -112,21 +122,22 @@ export function LeaderboardAndRewards() {
                 </p>
               </div>
 
-              <div className="pt-2 border-t border-sage-border/50 text-[11px] font-mono text-pista-400">
-                Unlock with {tier.points} Points
+              <div className="pt-2 border-t border-sage-border/50 text-[11px] font-mono text-pista-400 font-semibold flex items-center justify-between">
+                <span>Unlock: {tier.points} Points</span>
+                <ArrowUpRight className="w-3.5 h-3.5" />
               </div>
             </div>
           ))}
         </div>
       </div>
 
-      {/* Live Signup Leaderboard */}
+      {/* SIGNUP Merchant Leaderboard */}
       <div className="space-y-4">
         <div className="flex items-center justify-between pb-2 border-b border-sage-border/70 flex-wrap gap-2">
           <div className="flex items-center gap-2">
             <Trophy className="w-4 h-4 text-amber-400" />
-            <h3 className="text-lg sm:text-xl font-bold text-white tracking-tight">
-              Robinhood-Style Live Merchant Leaderboard
+            <h3 className="text-lg sm:text-xl font-bold text-white tracking-tight uppercase">
+              SIGNUP MERCHANT LEADERBOARD
             </h3>
           </div>
           <div className="flex items-center gap-2 text-xs font-mono text-pista-400">

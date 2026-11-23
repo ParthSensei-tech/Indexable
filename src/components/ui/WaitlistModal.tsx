@@ -72,7 +72,7 @@ export function WaitlistModal({ isOpen, onClose, initialDomain = "" }: WaitlistM
             <div className="space-y-2">
               <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-[12px] bg-pista-400/10 border border-pista-400/25 text-pista-300 text-xs font-mono">
                 <Users className="w-3.5 h-3.5" />
-                <span>ROBINHOOD VIP ACCESS // COHORT 1</span>
+                <span>VIP PRIORITY ACCESS // COHORT 1</span>
               </div>
 
               <h3 className="text-xl sm:text-2xl font-bold text-white tracking-tight">
@@ -126,6 +126,37 @@ export function WaitlistModal({ isOpen, onClose, initialDomain = "" }: WaitlistM
                   {errorMsg}
                 </p>
               )}
+
+              {/* Unlocked Point Rewards Brief */}
+              <div className="p-3.5 rounded-[16px] bg-velvet-900 border border-pista-400/25 space-y-2">
+                <div className="flex items-center justify-between text-xs">
+                  <span className="font-semibold text-white flex items-center gap-1.5">
+                    <Sparkles className="w-3.5 h-3.5 text-pista-400" />
+                    Early Founder Rewards Available:
+                  </span>
+                  <span className="font-mono text-pista-400 text-[11px] font-bold">
+                    Up to $4,400+ Value
+                  </span>
+                </div>
+                <div className="grid grid-cols-2 gap-2 text-[11px] font-mono text-sage-muted">
+                  <div className="bg-velvet-950/80 p-2 rounded-[10px] border border-sage-border/60">
+                    <span className="text-white font-bold block">100 PTS</span>
+                    <span>AI Citation Gap Audit</span>
+                  </div>
+                  <div className="bg-velvet-950/80 p-2 rounded-[10px] border border-sage-border/60">
+                    <span className="text-white font-bold block">300 PTS</span>
+                    <span>1-Yr Return Schema Sync</span>
+                  </div>
+                  <div className="bg-velvet-950/80 p-2 rounded-[10px] border border-sage-border/60">
+                    <span className="text-white font-bold block">500 PTS</span>
+                    <span>Lifetime 50% Enterprise</span>
+                  </div>
+                  <div className="bg-velvet-950/80 p-2 rounded-[10px] border border-sage-border/60">
+                    <span className="text-white font-bold block">1000 PTS</span>
+                    <span>1-on-1 GEO Strategy Call</span>
+                  </div>
+                </div>
+              </div>
 
               <div className="space-y-2 pt-2 border-t border-sage-border/60">
                 <div className="flex items-center gap-2 text-xs text-sage-muted">

@@ -14,13 +14,12 @@ interface WaitlistEntry {
 
 const waitlistEntries = new Map<string, WaitlistEntry>();
 
-// Seed initial leaderboard participants for social momentum
 const INITIAL_LEADERBOARD = [
   { rank: 1, store: "peakperformance.co", points: 1450, referrals: 14, tier: "VIP Diamond" },
-  { rank: 2, store: "lunarwellness.store", points: 850, referrals: 8, tier: "Gold Tier" },
-  { rank: 3, store: "kinfolkhome.com", points: 600, referrals: 6, tier: "Gold Tier" },
-  { rank: 4, store: "strideathletics.shop", points: 400, referrals: 4, tier: "Silver Tier" },
-  { rank: 5, store: "auroraskin.com", points: 250, referrals: 2, tier: "Bronze Tier" },
+  { rank: 2, store: "lunarwellness.store", points: 890, referrals: 8, tier: "Gold Tier" },
+  { rank: 3, store: "kinfolkhome.com", points: 620, referrals: 6, tier: "Gold Tier" },
+  { rank: 4, store: "strideathletics.shop", points: 410, referrals: 4, tier: "Silver Tier" },
+  { rank: 5, store: "auroraskin.com", points: 260, referrals: 2, tier: "Bronze Tier" },
 ];
 
 export async function GET() {
@@ -32,23 +31,23 @@ export async function GET() {
     rewards: [
       {
         threshold: 100,
-        title: "Bronze Tier (100 pts)",
-        perks: "Batch 1 Early Access + Automated Theme Compatibility Diagnostic Report.",
+        title: "AI Citation Gap Audit ($199 Value)",
+        perks: "Automated competitive intelligence report identifying which AI queries cite competitors over your brand, with revenue gap analysis.",
       },
       {
         threshold: 300,
-        title: "Silver Tier (300 pts)",
-        perks: "Lifetime Free 1-Click Auto-Injection for 1 Store + Priority Schema Ingestion.",
+        title: "1-Year Free Return Schema Sync ($588 Value)",
+        perks: "12 months of automated return policy & shipping schema sync included. Unlocks ecosystem catalog integration and priority index pings.",
       },
       {
         threshold: 500,
-        title: "Gold Tier (500 pts)",
-        perks: "Multi-Store Auto-Sync (up to 3 stores) + 24/7 AI Bot Crawler Monitoring.",
+        title: "Lifetime 50% Enterprise License ($1,200/yr Value)",
+        perks: "Guaranteed 50% lifetime discount on multi-store catalog sync, real-time stock alert webhooks, and 24/7 AI crawler protection nodes.",
       },
       {
         threshold: 1000,
-        title: "VIP Diamond Tier (1,000 pts)",
-        perks: "Dedicated GEO Optimization Architect + Custom /llms.txt Curation + Zero Platform Fees for Life.",
+        title: "Quarterly 1-on-1 GEO Strategy Consultation ($2,500 Value)",
+        perks: "Direct architectural consultation on custom /llms.txt manifest architecture, headless JSON-LD pipeline tuning, and custom crawler indexing.",
       },
     ],
   });

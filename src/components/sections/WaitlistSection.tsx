@@ -241,7 +241,7 @@ export function WaitlistSection() {
                   Move Up 50 Spots Per Referral
                 </span>
                 <span className="font-mono text-pista-400 text-[11px]">
-                  Robinhood Early Access
+                  SIGNUP PRIORITY ACCESS
                 </span>
               </div>
               <p className="text-[11px] text-sage-muted">
