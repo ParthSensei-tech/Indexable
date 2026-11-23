@@ -1,0 +1,99 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --color-velvet-base: #0c1510;
+  --color-velvet-deep: #070e0a;
+  --color-pista-bright: #86efac;
+  --color-pista-glow: rgba(134, 239, 172, 0.15);
+}
+
+@layer base {
+  body {
+    background-color: #0c1510;
+    color: #f1f5f3;
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    text-wrap: balance;
+  }
+}
+
+/* Crushed Velvet Texture & Ambient Sheen */
+.velvet-bg {
+  background-color: #0c1510;
+  background-image: 
+    radial-gradient(circle at 50% 0%, rgba(134, 239, 172, 0.08) 0%, transparent 55%),
+    radial-gradient(circle at 15% 35%, rgba(74, 222, 128, 0.04) 0%, transparent 40%),
+    radial-gradient(circle at 85% 65%, rgba(187, 247, 208, 0.05) 0%, transparent 45%),
+    radial-gradient(circle at 40% 90%, rgba(34, 197, 94, 0.04) 0%, transparent 50%);
+  background-attachment: fixed;
+}
+
+/* 3D Perspective and Transform Containers */
+.perspective-1200 {
+  perspective: 1200px;
+}
+
+.preserve-3d {
+  transform-style: preserve-3d;
+}
+
+.backface-hidden {
+  backface-visibility: hidden;
+}
+
+/* Dark Pista Velvet Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #070e0a;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #1c3326;
+  border-radius: 4px;
+  border: 1px solid rgba(134, 239, 172, 0.15);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #254433;
+}
+
+/* Frosted Velvet Glass Effect */
+.velvet-glass {
+  background: rgba(16, 28, 21, 0.72);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(134, 239, 172, 0.12);
+}
+
+.velvet-card-active {
+  background: rgba(18, 33, 24, 0.85);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(134, 239, 172, 0.28);
+  box-shadow: 0 20px 45px -15px rgba(0, 0, 0, 0.7), 0 0 30px -10px rgba(134, 239, 172, 0.12);
+}
+
+/* Subtle Shimmer for High-Priority Buttons */
+@keyframes subtle-pulse {
+  0%, 100% {
+    box-shadow: 0 0 20px -3px rgba(134, 239, 172, 0.35);
+  }
+  50% {
+    box-shadow: 0 0 35px -1px rgba(134, 239, 172, 0.55);
+  }
+}
+
+.cta-pulse {
+  animation: subtle-pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
